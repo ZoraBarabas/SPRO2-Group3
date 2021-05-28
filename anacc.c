@@ -181,9 +181,22 @@ void calculate_all(){ //in m/s2
 	else{
 		linear.velx[1] = linear.accx[0] * timeinterval + (linear.accx[1] - linear.accx[0]) * timeinterval / 2; //first integration
 		
-		if ((linear.velx[1]<0)&&(linear.velx[0]<0)){			if ((linear.velx[1] * (-1)) < (linear.velx[0] * (-1))) linear.posx[1] = linear.posx[0] + linear.velx[0] * (-1) * timeinterval + ((linear.velx[1] * (-1) - linear.velx[0] * (-1)) * timeinterval/2)*(-1);			if ((linear.velx[1] * (-1)) >= (linear.velx[0] * (-1))) linear.posx[1] = linear.posx[0] + linear.velx[0] * (-1) * timeinterval + ((linear.velx[1] * (-1) - linear.velx[0] * (-1))* timeinterval /2);		}		if ((linear.velx[1]<0)&&(linear.velx[0]>=0)){			if ((linear.velx[1] * (-1)) < (linear.velx[0] * (-1))) linear.posx[1] = linear.posx[0] + linear.velx[0] * timeinterval + ((linear.velx[1] * (-1) - linear.velx[0]) * timeinterval/2)*(-1);			if ((linear.velx[1] * (-1)) >= (linear.velx[0] * (-1))) linear.posx[1] = linear.posx[0] + linear.velx[0] * timeinterval + ((linear.velx[1] * (-1) - linear.velx[0]) * timeinterval/2);		}
-		if ((linear.velx[1]>=0)&&(linear.velx[0]<0)){			if ((linear.velx[1]) < (linear.velx[0] * (-1))) linear.posx[1] = linear.posx[0] + linear.velx[0] * (-1) * timeinterval + ((linear.velx[1] - linear.velx[0] * (-1)) * timeinterval/2)*(-1);			if ((linear.velx[1]) >= (linear.velx[0] * (-1))) linear.posx[1] = linear.posx[0] + linear.velx[0] * (-1) * timeinterval + ((linear.velx[1] - linear.velx[0] * (-1)) * timeinterval/2);		}
-		if ((linear.velx[1]>=0)&&(linear.velx[0]>=0)){			if ((linear.velx[1]) < (linear.velx[0])) linear.posx[1] = linear.posx[0] + linear.velx[0] * timeinterval + ((linear.velx[1] - linear.velx[0]) * timeinterval/2)*(-1);			if ((linear.velx[1]) >= (linear.velx[0])) linear.posx[1] = linear.posx[0] + linear.velx[0] * timeinterval + ((linear.velx[1] - linear.velx[0]) * timeinterval/2);		}
+		if ((linear.velx[1]<0)&&(linear.velx[0]<0)){
+			if ((linear.velx[1] * (-1)) < (linear.velx[0] * (-1))) linear.posx[1] = linear.posx[0] + linear.velx[0] * (-1) * timeinterval + ((linear.velx[1] * (-1) - linear.velx[0] * (-1)) * timeinterval/2)*(-1);
+			if ((linear.velx[1] * (-1)) >= (linear.velx[0] * (-1))) linear.posx[1] = linear.posx[0] + linear.velx[0] * (-1) * timeinterval + ((linear.velx[1] * (-1) - linear.velx[0] * (-1))* timeinterval /2);
+		}
+		if ((linear.velx[1]<0)&&(linear.velx[0]>=0)){
+			if ((linear.velx[1] * (-1)) < (linear.velx[0] * (-1))) linear.posx[1] = linear.posx[0] + linear.velx[0] * timeinterval + ((linear.velx[1] * (-1) - linear.velx[0]) * timeinterval/2)*(-1);
+			if ((linear.velx[1] * (-1)) >= (linear.velx[0] * (-1))) linear.posx[1] = linear.posx[0] + linear.velx[0] * timeinterval + ((linear.velx[1] * (-1) - linear.velx[0]) * timeinterval/2);
+		}
+		if ((linear.velx[1]>=0)&&(linear.velx[0]<0)){
+			if ((linear.velx[1]) < (linear.velx[0] * (-1))) linear.posx[1] = linear.posx[0] + linear.velx[0] * (-1) * timeinterval + ((linear.velx[1] - linear.velx[0] * (-1)) * timeinterval/2)*(-1);
+			if ((linear.velx[1]) >= (linear.velx[0] * (-1))) linear.posx[1] = linear.posx[0] + linear.velx[0] * (-1) * timeinterval + ((linear.velx[1] - linear.velx[0] * (-1)) * timeinterval/2);
+		}
+		if ((linear.velx[1]>=0)&&(linear.velx[0]>=0)){
+			if ((linear.velx[1]) < (linear.velx[0])) linear.posx[1] = linear.posx[0] + linear.velx[0] * timeinterval + ((linear.velx[1] - linear.velx[0]) * timeinterval/2)*(-1);
+			if ((linear.velx[1]) >= (linear.velx[0])) linear.posx[1] = linear.posx[0] + linear.velx[0] * timeinterval + ((linear.velx[1] - linear.velx[0]) * timeinterval/2);
+		}
 	}
 	
 	//y axis
@@ -191,9 +204,22 @@ void calculate_all(){ //in m/s2
 	else{
 		linear.vely[1] = linear.accy[0] * timeinterval + (linear.accy[1] - linear.accy[0])/2; //first integration
 		
-		if ((linear.vely[1]<0)&&(linear.vely[0]<0)){			if ((linear.vely[1] * (-1)) < (linear.vely[0] * (-1))) linear.posy[1] = linear.posy[0] + linear.vely[0] * (-1) * timeinterval + ((linear.vely[1] * (-1) - linear.vely[0] * (-1)) * timeinterval/2)*(-1);			if ((linear.vely[1] * (-1)) >= (linear.vely[0] * (-1))) linear.posy[1] = linear.posy[0] + linear.vely[0] * (-1) * timeinterval + ((linear.vely[1] * (-1) - linear.vely[0] * (-1)) * timeinterval/2);		}		if ((linear.vely[1]<0)&&(linear.vely[0]>=0)){			if ((linear.vely[1] * (-1)) < (linear.vely[0] * (-1))) linear.posy[1] = linear.posy[0] + linear.vely[0] * timeinterval + ((linear.vely[1] * (-1) - linear.vely[0]) * timeinterval/2)*(-1);			if ((linear.vely[1] * (-1)) >= (linear.vely[0] * (-1))) linear.posy[1] = linear.posy[0] + linear.vely[0] * timeinterval + ((linear.vely[1] * (-1) - linear.vely[0]) * timeinterval/2);		}
-		if ((linear.vely[1]>=0)&&(linear.vely[0]<0)){			if ((linear.vely[1]) < (linear.vely[0] * (-1))) linear.posy[1] = linear.posy[0] + linear.vely[0] * (-1) * timeinterval + ((linear.vely[1] - linear.vely[0] * (-1)) * timeinterval/2)*(-1);			if ((linear.vely[1]) >= (linear.vely[0] * (-1))) linear.posy[1] = linear.posy[0] + linear.vely[0] * (-1) * timeinterval + ((linear.vely[1] - linear.vely[0] * (-1)) * timeinterval/2);		}
-		if ((linear.vely[1]>=0)&&(linear.vely[0]>=0)){			if ((linear.vely[1]) < (linear.vely[0])) linear.posy[1] = linear.posy[0] + linear.vely[0] * timeinterval + ((linear.vely[1] - linear.vely[0]) * timeinterval/2)*(-1);			if ((linear.vely[1]) >= (linear.vely[0])) linear.posy[1] = linear.posy[0] + linear.vely[0] * timeinterval + ((linear.vely[1] - linear.vely[0]) * timeinterval/2);		}
+		if ((linear.vely[1]<0)&&(linear.vely[0]<0)){
+			if ((linear.vely[1] * (-1)) < (linear.vely[0] * (-1))) linear.posy[1] = linear.posy[0] + linear.vely[0] * (-1) * timeinterval + ((linear.vely[1] * (-1) - linear.vely[0] * (-1)) * timeinterval/2)*(-1);
+			if ((linear.vely[1] * (-1)) >= (linear.vely[0] * (-1))) linear.posy[1] = linear.posy[0] + linear.vely[0] * (-1) * timeinterval + ((linear.vely[1] * (-1) - linear.vely[0] * (-1)) * timeinterval/2);
+		}
+		if ((linear.vely[1]<0)&&(linear.vely[0]>=0)){
+			if ((linear.vely[1] * (-1)) < (linear.vely[0] * (-1))) linear.posy[1] = linear.posy[0] + linear.vely[0] * timeinterval + ((linear.vely[1] * (-1) - linear.vely[0]) * timeinterval/2)*(-1);
+			if ((linear.vely[1] * (-1)) >= (linear.vely[0] * (-1))) linear.posy[1] = linear.posy[0] + linear.vely[0] * timeinterval + ((linear.vely[1] * (-1) - linear.vely[0]) * timeinterval/2);
+		}
+		if ((linear.vely[1]>=0)&&(linear.vely[0]<0)){
+			if ((linear.vely[1]) < (linear.vely[0] * (-1))) linear.posy[1] = linear.posy[0] + linear.vely[0] * (-1) * timeinterval + ((linear.vely[1] - linear.vely[0] * (-1)) * timeinterval/2)*(-1);
+			if ((linear.vely[1]) >= (linear.vely[0] * (-1))) linear.posy[1] = linear.posy[0] + linear.vely[0] * (-1) * timeinterval + ((linear.vely[1] - linear.vely[0] * (-1)) * timeinterval/2);
+		}
+		if ((linear.vely[1]>=0)&&(linear.vely[0]>=0)){
+			if ((linear.vely[1]) < (linear.vely[0])) linear.posy[1] = linear.posy[0] + linear.vely[0] * timeinterval + ((linear.vely[1] - linear.vely[0]) * timeinterval/2)*(-1);
+			if ((linear.vely[1]) >= (linear.vely[0])) linear.posy[1] = linear.posy[0] + linear.vely[0] * timeinterval + ((linear.vely[1] - linear.vely[0]) * timeinterval/2);
+		}
 	}
 	
 	linear.accx[0] = linear.accx[1]; //new becomes previous
